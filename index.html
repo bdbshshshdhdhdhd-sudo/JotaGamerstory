@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Jota Gamer Store — acessórios para elevar seu setup gamer.">
+  <title>Jota Gamer Store | Seu próximo nível</title>
+
+  <style>
+    :root {
+      --bg: #080b12;
+      --card: #111827;
+      --blue: #38bdf8;
+      --blue2: #2563eb;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: #253247;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 7%;
+      border-bottom: 1px solid var(--border);
+      background: #080b12ee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      padding: 100px 7% 90px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, #123a6560, transparent 65%);
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--blue);
+      border: 1px solid #38bdf855;
+      background: #0c2435;
+      padding: 7px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      max-width: 850px;
+      margin: 0 auto 22px;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      max-width: 610px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 21px;
+      border-radius: 9px;
+      font-weight: bold;
+      border: 1px solid var(--border);
+      transition: .2s;
+    }
+
+    .btn-primary {
+      color: #04111c;
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.12);
+    }
+
+    section {
+      padding: 75px 7%;
+      scroll-margin-top: 80px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: .25s;
+      overflow: hidden;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue);
+      box-shadow: 0 12px 35px #0284c722;
+    }
+
+    .product-art {
+      height: 145px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #17283b, #0b1220);
+      font-size: 65px;
+      margin-bottom: 20px;
+    }
+
+    .category {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .product h3 {
+      font-size: 20px;
+      margin: 7px 0;
+    }
+
+    .product p {
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 45px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 17px 0;
+    }
+
+    .price small {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: normal;
+    }
+
+    .product .btn {
+      display: block;
+      text-align: center;
+      width: 100%;
+      background: #17283b;
+      border-color: #29445d;
+    }
+
+    .product .btn:hover {
+      background: var(--blue2);
+      border-color: var(--blue2);
+    }
+
+    .notice {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 25px;
+    }
+
+    .about {
+      background: #0d121c;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 650px;
+      margin: 12px auto 0;
+      color: var(--muted);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 10px;
+      background: var(--card);
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .feature span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      padding: 25px 7%;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer span {
+      color: var(--blue);
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 17px 5%;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      nav {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 80px 6% 70px;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product-art {
+        height: 165px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#inicio" class="logo">JOTA<span> GAMER</span></a>
+
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="tag">LEVEL UP YOUR SETUP</div>
+
+      <h1>Seu setup merece um <span>novo nível.</span></h1>
+
+      <p>
+        Tecnologia, estilo e desempenho para transformar
+        sua experiência gamer. Encontre seu próximo favorito.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#produtos">
+          Explorar produtos ↘
+        </a>
+        <a class="btn" href="#sobre">Conhecer a loja</a>
+      </div>
+    </section>
+
+    <section id="produtos">
+      <h2 class="section-title">Destaques do setup.</h2>
+      <p class="section-desc">
+        Acessórios para quem leva o jogo a sério.
+      </p>
+
+      <div class="products">
+        <article class="product">
+          <div class="product-art">🖱️</div>
+          <span class="category">Precisão</span>
+          <h3>Mouse Gamer</h3>
+          <p>Controle preciso para cada movimento e partida.</p>
+          <div class="price">R$ 89,90 <small>exemplo</small></div>
+          <button class="btn" onclick="verProduto('Mouse Gamer')">
+            Tenho interesse ↗
+          </button>
+        </article>
+
+        <article class="product">
+          <div class="product-art">⌨️</div>
+          <span class="category">Performance</span>
+          <h3>Teclado Gamer</h3>
+          <p>Conforto e agilidade para jogar e criar.</p>
+          <div class="price">R$ 159,90 <small>exemplo</small></div>
+          <button class="btn" onclick="verProduto('Teclado Gamer')">
+            Tenho interesse ↗
+          </button>
+        </article>
+
+        <article class="product">
+          <div class="product-art">🎧</div>
+          <span class="category">Imersão</span>
+          <h3>Headset Gamer</h3>
+          <p>Entre no jogo com áudio e comunicação.</p>
+          <div class="price">R$ 129,90 <small>exemplo</small></div>
+          <button class="btn" onclick="verProduto('Headset Gamer')">
+            Tenho interesse ↗
+          </button>
+        </article>
+      </div>
+
+      <div class="notice">
+        💡 Projeto demonstrativo de portfólio.
+        Os produtos e preços são ilustrativos; não representam
+        ofertas reais. Os botões simulam uma interação.
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <span class="category">NOSSA PROPOSTA</span>
+      <h2 class="section-title">Mais que acessórios. Seu estilo de jogo.</h2>
+      <p>
+        A Jota Gamer Store é um projeto demonstrativo criado
+        para explorar design, desenvolvimento web e experiência
+        do usuário em uma loja gamer moderna.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <strong>⚡ Desempenho</strong>
+          <span>Foco na experiência</span>
+        </div>
+        <div class="feature">
+          <strong>🎮 Estilo gamer</strong>
+          <span>Visual moderno</span>
+        </div>
+        <div class="feature">
+          <strong>📱 Responsivo</strong>
+          <span>Feito para cada tela</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <h2 class="section-title">Bora montar seu setup?</h2>
+      <p class="section-desc">
+        Este é um projeto de demonstração desenvolvido por JotaDev.
+      </p>
+      <a class="btn btn-primary"
+         href="https://github.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Conhecer o GitHub ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    Criado por <span>JotaDev</span> · Projeto de portfólio · 2026
+  </footer>
+
+  <script>
+    function verProduto(nome) {
+      alert(
+        "Você selecionou: " + nome +
+        "\n\nEsta é uma loja demonstrativa do portfólio JotaDev!"
+      );
+    }
+  </script>
+</body>
+</html>
