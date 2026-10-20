@@ -184,13 +184,26 @@
     }
 
     .product-art {
-      height: 145px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #17283b, #0b1220);
-      font-size: 65px;
-      margin-bottom: 20px;
+  height: 210px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #17283b, #0b1220);
+  overflow: hidden;
+  margin-bottom: 20px;
+    }
+    .product-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.product-art img:hover {
+  transform: scale(1.06);
+}
     }
 
     .category {
